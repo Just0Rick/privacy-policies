@@ -1,0 +1,428 @@
+<html><head><!-- frame-runtime --><base href="/_f/1784996222-b7f7/"><script>window.__FRAME_PREAMBLE={"capabilities":{"downloads":"downloads.BABDwU1K.js","mcp":"mcp.hoz5jxDa.js","permissions":"permissions.ByA9Fd8x.js","self":"self.D3u1zjZe.js","user":"user.Cp1-RnjB.js"},"transforms":"_transforms.DYk1Ltlh.js","comments":"_comments.DiwQajF_.js","translate":"_translate.C5leZL2A.js"}</script><script>(function(){"use strict";const Ee="modulepreload",we=function(e){return"/"+e},Se={},ee=function(t,n,l){let i=Promise.resolve();function s(f){const c=new Event("vite:preloadError",{cancelable:!0});if(c.payload=f,window.dispatchEvent(c),!c.defaultPrevented)throw f}return i.then(f=>{for(const c of f||[])c.status==="rejected"&&s(c.reason);return t().catch(s)})},te=["light","dark","system"];function ne(e){if(e===null||typeof e!="object")return!1;const t=e.__frame_init;return t!==null&&typeof t=="object"}function W(e){return e!==null&&typeof e=="object"&&e.__frame_size_poke===!0}function re(e){if(e===null||typeof e!="object")return!1;const t=e.__frame_theme;if(t===null||typeof t!="object")return!1;const n=t.theme;return typeof n=="string"&&te.includes(n)}function se(e){try{typeof reportError=="function"?reportError(e):setTimeout(()=>{throw e},0)}catch{}}const oe=Object.freeze(Object.assign(Object.create(null),{user:Object.freeze(Object.assign(Object.create(null),{id:null,isOwner:!1,canEdit:!1,name:null,avatarUrl:null,email:null}))}));function Y(e){if(window===top||e.type==="auxclick"&&e.button!==1)return;const t=e.composedPath?e.composedPath():[e.target];let n=null;for(let f=0;f<t.length;f++){const c=t[f];if(c&&c.matches&&c.matches("a[href],area[href]")){n=c;break}}if(!n&&e.target&&e.target.closest&&(n=e.target.closest("a[href],area[href]")),!n)return;const l=n.getAttribute("href");if(!l)return;let i,s;try{i=new URL(l,document.baseURI),s=new URL(document.baseURI).origin}catch{return}(i.protocol==="http:"||i.protocol==="https:")&&i.origin!==s&&(e.preventDefault(),parent.postMessage({__frame_nav:!0,url:i.href},"*"))}const K={};function D(e){if(window===top)return;const t=Date.now();t-(K[e]||0)<500||(K[e]=t,parent.postMessage({__frame_engaged:!0,kind:e},"*"))}const ie=2e3,x=["wheel","touchstart","touchmove","keydown","pointerdown"];let J=0;function ae(e){e.isTrusted&&(J=Date.now())}function ce(){addEventListener("click",Y,!0),addEventListener("auxclick",Y,!0)}function le(){for(let e=0;e<x.length;e++)addEventListener(x[e],ae,{capture:!0,passive:!0});addEventListener("scroll",e=>{e.isTrusted&&Date.now()-J<ie&&D("scroll")},{capture:!0,passive:!0}),addEventListener("pointermove",e=>{e.isTrusted&&D("pointer")},{capture:!0,passive:!0}),addEventListener("click",e=>{e.isTrusted&&D("click")},{capture:!0,passive:!0})}const I="__frame_scroll",ue=150,fe=310,de=160,me=3e4;function pe(){let e=0,t=!1,n=!1,l=!1,i=0;const s=a=>{try{sessionStorage.setItem(I,JSON.stringify({y:a}))}catch{}},f=()=>{if(t){t=!1;return}n=!0,clearTimeout(e),e=setTimeout(()=>s(scrollY),ue)};try{addEventListener("scroll",f,{passive:!0}),addEventListener("pagehide",()=>{clearTimeout(e),s(scrollY)})}catch{}const c=()=>{let a;try{a=sessionStorage.getItem(I)}catch{return null}if(a===null)return null;let _;try{_=JSON.parse(a)}catch{_=null}const m=_?.y;if(!(typeof m=="number"&&Number.isFinite(m)&&m>=0)){try{sessionStorage.removeItem(I)}catch{}return null}return m};let g=!1;const p=a=>{try{const _=scrollY;scrollTo({top:a,left:0,behavior:"instant"}),i=a,l=!0,s(a);const m=scrollY;m!==_&&(t=!0),m!==a&&!g&&(g=!0,addEventListener("load",()=>{try{if(scrollY===m){const y=c();p(y!==null?y:i)}}catch{}},{once:!0}))}catch{}},o=()=>{try{return!!location.hash}catch{return!0}};let u=!1;const d=()=>{try{if(u||innerWidth>fe||innerHeight>de)return;u=!0;const a=Date.now(),_=()=>{try{removeEventListener("resize",_)}catch{}if(Date.now()-a>me||n||o())return;const m=c();p(m!==null?m:i)};addEventListener("resize",_)}catch{}};let h=!1,b=!1;return{restore(){if(h||(h=!0,o()))return;const a=c();a!==null&&(p(a),d())},promoted(){if(b||(b=!0,o()))return;const a=c();a!==null?(p(a),d()):l&&p(i)}}}function he(e,t,n){const l=[...t.values()].filter(i=>i.targets.some(s=>s.startsWith(e+".")));return{wrap(i,s){const f=`${e}.${i}`,c=l.filter(g=>g.targets.includes(f));return c.length===0?(...g)=>{try{return s(...g)}catch(p){return Promise.reject(p)}}:(...g)=>{let p=g;for(const u of c){const d=u.module.parameters;if(d)try{p=d(p)}catch{return Promise.reject({code:"transform_error",id:u.id,scope:e,message:"parameters transform failed"})}}let o;try{o=s(...p)}catch(u){o=Promise.reject(u)}return o.then(u=>{for(let d=c.length-1;d>=0;d--){const h=c[d],b=h.module.returns;if(b)try{u=b(u)}catch{return n({id:h.id,scope:e,leg:"returns"}),u}}return u},u=>{for(let d=c.length-1;d>=0;d--){const h=c[d],b=h.module.throws;if(b)try{u=b(u)}catch{return n({id:h.id,scope:e,leg:"throws"}),Promise.reject(u)}}return Promise.reject(u)})}}}}function ge(e,t,n,l=()=>{}){const i=new Set(e.changes??[]),s=new Map;for(const f of i){const c=t[f];c&&s.set(f,c)}return{contract:e.contract,changes:i,flags:new Set(e.flags??[]),capabilities:e.capabilities??{},capBudgets:e.capBudgets??{},transforms:s,shellOrigin:n.shellOrigin,mount:n.mount,pipe:f=>he(f,s,l)}}(function(){const e=Object.defineProperty,t=globalThis,n=["RTCPeerConnection","webkitRTCPeerConnection","RTCDataChannel","RTCIceCandidate","RTCSessionDescription","RTCRtpSender","RTCRtpReceiver"];let l=0;for(let i=0;i<n.length;i++){const s=n[i];try{e(t,s,{value:void 0,writable:!1,configurable:!1})}catch{try{delete t[s]}catch{}try{e(t,s,{value:void 0,writable:!1,configurable:!0})}catch{}}typeof t[s]=="function"&&l++}if(l&&window!==top)try{parent.postMessage({__frame_rtc_lockdown_failed:l},"*")}catch{}})();const _e=1e4,ye=Object.freeze([...window.__FRAME_PREAMBLE?.origins??["https://claude.ai","https://preview.claude.ai"]]);function G(e){for(const t of ye)if(t.endsWith(":*"))try{const n=new URL(e);if(`${n.protocol}//${n.hostname}:*`===t)return!0}catch{}else if(e===t)return!0;return!1}const R=Object.freeze({...window.__FRAME_PREAMBLE?.capabilities}),U=window.__FRAME_PREAMBLE?.transforms,z=window.__FRAME_PREAMBLE?.comments,$=window.__FRAME_PREAMBLE?.translate,T=/^[\w.-]+\.js$/,be=/^[a-z][a-z0-9_-]{0,63}$/;let V=null,j=null;function q(e,t,n){try{Object.defineProperty(e,t,{value:n,writable:!1,configurable:!1,enumerable:!0})}catch{try{Object.defineProperty(e,t,{value:n,writable:!1,configurable:!0,enumerable:!0})}catch{}}}let B=!1;function X(e){const t=document.documentElement;e==="light"||e==="dark"?(t.dataset.theme=e,t.style.colorScheme=e,B=!0):B&&(delete t.dataset.theme,t.style.colorScheme="",B=!1)}const A=Object.assign(Object.create(null),{mcp:Object.assign(Object.create(null),{watchTool:{handlerArg:3}})}),M=new Map;function Q(e,t){const n=M.get(e);if(!n)return;const l=Object.assign(Object.create(null),t);Object.assign(n.impl,l),n.impl.__settled=()=>Promise.reject({code:"capability_removed",message:`${e}: method not in this runtime`});const i=n.queue;n.queue=[];for(const s of i){const f=l[s.method];if(f)if(A[e]?.[s.method])try{s.resolve(f(...s.args))}catch{k(s,A[e][s.method].handlerArg,{code:"transform_error",message:`${e}.${s.method} rejected its arguments`})}else f(...s.args).then(s.resolve,s.reject);else{const c={code:"capability_removed",message:`${e}.${s.method} is not in this runtime`},g=A[e]?.[s.method];if(g){k(s,g.handlerArg,c);continue}s.reject(c)}}}function ve(e,t){const n=M.get(e);if(!n)return;n.impl.__settled=()=>Promise.reject(t);const l=n.queue;n.queue=[];for(const i of l){const s=A[e]?.[i.method];if(s){k(i,s.handlerArg,t);continue}i.reject(t)}}function N(e,t){const n=oe[e];if(!n){ve(e,t);return}Q(e,Object.fromEntries(Object.entries(n).map(([l,i])=>[l,()=>Promise.resolve(i)])))}function k(e,t,n){if(e.syncState?.dead)return;const l=e.args[t];typeof l=="function"&&queueMicrotask(()=>{if(!e.syncState?.dead)try{l({type:"error",error:n})}catch(i){se(i)}})}const F=Object.getOwnPropertyDescriptor(window,"claude");if(window!==top&&!(F&&F.writable===!1)){ce(),le();let e=null;try{e=pe()}catch{}const t=F?.value??{};q(window,"claude",t);const n=o=>{const u={impl:Object.create(null),queue:[]};M.set(o,u);const d=u.impl,h=new Proxy(d,{get:(b,a)=>{if(typeof a!="string"||a==="then"||a==="toJSON"||a==="valueOf")return;if(a==="toString")return Object.prototype.toString;const _=A[o]?.[a];return _?(...m)=>{if(typeof m[_.handlerArg]!="function")throw new TypeError(`${o}.${a} requires a handler function`);const y=d[a];if(y)return y(...m);if(d.__settled){const v={dead:!1},P={args:[...m],syncState:v};return d.__settled().catch(C=>k(P,_.handlerArg,C)),()=>{v.dead=!0}}let E=null;const S={dead:!1};return u.queue.push({method:a,args:m,resolve:v=>{E=typeof v=="function"?v:null,S.dead&&E?.()},reject:()=>{},syncState:S}),()=>{S.dead=!0,E?.()}}:(...m)=>{const y=d[a]??d.__settled;return y?y(...m):new Promise((E,S)=>{u.queue.push({method:a,args:m,resolve:E,reject:S})})}},set:()=>!1});q(t,o,h)};for(const o of Object.keys(R)){if(t[o]!==void 0){q(t,o,t[o]);continue}n(o)}let l=null,i=null,s=0;const f=o=>{o.source!==parent||!G(o.origin)||ne(o.data)&&(l=o.data.__frame_init,j=o.origin,removeEventListener("message",f),clearTimeout(s),i?.())};addEventListener("message",f),parent.postMessage({__frame_connect:!0},"*");const c=new Promise(o=>{i=o,s=setTimeout(()=>{removeEventListener("message",f),o()},_e)}),g=document.readyState==="loading"?new Promise(o=>document.addEventListener("DOMContentLoaded",()=>o(),{once:!0})):Promise.resolve();g.then(()=>{try{e?.restore()}catch{}});const p=o=>{if(!(o.source!==parent||!G(o.origin))&&W(o.data)){removeEventListener("message",p);try{e?.promoted()}catch{}}};addEventListener("message",p),c.then(async()=>{if(!l||!j){for(const r of M.keys())N(r,{code:"not_granted",message:"frame initialization did not arrive - capability unavailable"});return}X(l.theme);const o=j;let u=!1,d=!1;addEventListener("message",r=>{if(r.source!==parent||r.origin!==o)return;re(r.data)&&X(r.data.__frame_theme.theme);const w=r.data?.__fc_mode;w&&typeof w=="object"&&!u&&z&&T.test(z)&&(u=!0,h(z).then(H=>H.install?.(o,w.on===!0)).catch(()=>{}));const O=r.data?.__ft_cmd;O&&typeof O=="object"&&!d&&$&&T.test($)&&(d=!0,h($).then(H=>H.install?.(o,O)).catch(()=>{}))});const h=r=>ee(()=>import("/_runtime/"+r),void 0),b=Object.keys(l.capabilities??{});for(const r of b)Object.hasOwn(R,r)||be.test(r)&&t[r]===void 0&&(n(r),N(r,{code:"capability_disabled",message:"capability not in this runtime generation"}));const a=b.filter(r=>Object.hasOwn(R,r)).map(r=>[r,R[r]]).filter(r=>typeof r[1]=="string"&&T.test(r[1])),[_,...m]=await Promise.allSettled([U&&T.test(U)?h(U):Promise.resolve({}),...a.map(([,r])=>h(r))]),y=j;V=ge(l,_.status==="fulfilled"&&_.value?.TRANSFORMS||{},{shellOrigin:y,mount:Q},r=>parent.postMessage({__frame_cap_telemetry:r},y));const E=r=>parent.postMessage({__frame_cap_telemetry:{kind:"cap-load-error",cap:r}},y),S=V;m.forEach((r,w)=>{const O=a[w][0];if(r.status!=="fulfilled"){E(O);return}try{r.value?.install?.(S)}catch{E(O)}});for(const[r,w]of M)if(!(w.queue.length===0&&Object.keys(w.impl).length>0)){if(b.includes(r)){N(r,{code:"capability_disabled",message:"capability not available in this session"});continue}N(r,{code:"not_granted",message:"capability not available in this session"})}await g,parent.postMessage({__frame_ready:!0},j);let v=-1,P=0;const C=()=>{P=0;const r=Math.max(document.documentElement.scrollHeight,document.body?document.body.scrollHeight:0);r!==v&&(v=r,parent.postMessage({__frame_size:!0,h:r},y))},L=()=>{P||(P=setTimeout(C,200))},Z=new ResizeObserver(L);Z.observe(document.documentElement),document.body&&Z.observe(document.body),document.addEventListener("load",L,!0),document.fonts?.ready.then(L,()=>{}),addEventListener("beforeprint",()=>{v=-1,C()}),L(),addEventListener("message",r=>{if(!(r.source!==parent||r.origin!==y)&&W(r.data)){try{e?.promoted()}catch{}v=-1,L()}})})}})();</script><!-- /frame-runtime --><meta charset="utf8"><meta name="viewport" content="width=device-width,initial-scale=1"><style>:root{color-scheme:light}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}</style></head><body>
+<title>Pocket QCode — Privacy Policy</title>
+<style>
+  :root {
+    --ion-color-primary: #5b6ef5;
+    --ion-color-primary-contrast: #ffffff;
+    --ion-color-primary-shade: #5061d8;
+
+    --ion-color-warning: #b8791e;
+
+    --ion-color-medium: #6e7180;
+
+    --ion-background-color: #f7f6f2;
+    --ion-text-color: #1b1c20;
+
+    --ion-color-step-50: #f1f0ea;
+    --ion-color-step-200: #e4e2da;
+
+    --ion-item-background: #ffffff;
+    --ion-toolbar-background: #f7f6f2;
+    --ion-border-color: #e4e2da;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --ion-color-warning: #e6b450;
+      --ion-color-medium: #9a9da8;
+      --ion-background-color: #15161a;
+      --ion-text-color: #f4f5f7;
+      --ion-color-step-50: #1a1b20;
+      --ion-color-step-200: #2c2e36;
+      --ion-item-background: #1f2127;
+      --ion-toolbar-background: #15161a;
+      --ion-border-color: #2c2e36;
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --ion-color-warning: #e6b450;
+    --ion-color-medium: #9a9da8;
+    --ion-background-color: #15161a;
+    --ion-text-color: #f4f5f7;
+    --ion-color-step-50: #1a1b20;
+    --ion-color-step-200: #2c2e36;
+    --ion-item-background: #1f2127;
+    --ion-toolbar-background: #15161a;
+    --ion-border-color: #2c2e36;
+  }
+
+  :root[data-theme="light"] {
+    --ion-color-warning: #b8791e;
+    --ion-color-medium: #6e7180;
+    --ion-background-color: #f7f6f2;
+    --ion-text-color: #1b1c20;
+    --ion-color-step-50: #f1f0ea;
+    --ion-color-step-200: #e4e2da;
+    --ion-item-background: #ffffff;
+    --ion-toolbar-background: #f7f6f2;
+    --ion-border-color: #e4e2da;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    background: var(--ion-background-color);
+    color: var(--ion-text-color);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  header.app-header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: var(--ion-toolbar-background);
+  }
+
+  .header-row {
+    display: flex;
+    align-items: center;
+    gap: 0.8125rem;
+    height: 3.5rem;
+    padding: 0 1.125rem;
+    border-bottom: 1px solid var(--ion-color-step-50);
+    max-width: 44rem;
+    margin: 0 auto;
+  }
+
+  .back-arrow {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.75rem;
+    height: 1.75rem;
+    flex: none;
+    background: none;
+    border: none;
+    padding: 0;
+    color: var(--ion-text-color);
+    cursor: pointer;
+  }
+
+  .back-arrow svg {
+    width: 1.375rem;
+    height: 1.375rem;
+  }
+
+  .header-title {
+    flex: 1;
+    font-size: 1.125rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+  }
+
+  .privacy-policy-page {
+    max-width: 44rem;
+    margin: 0 auto;
+    padding: 1.25rem 1.25rem 2.5rem;
+    font-size: 0.9375rem;
+    line-height: 1.65;
+    color: var(--ion-text-color);
+  }
+
+  .privacy-policy-page p,
+  .privacy-policy-page li,
+  .privacy-policy-page dd {
+    color: var(--ion-text-color);
+  }
+
+  .privacy-policy-page a {
+    color: var(--ion-color-primary);
+  }
+
+  .privacy-policy-page h2 {
+    font-size: 1.0625rem;
+    font-weight: 700;
+    margin: 2rem 0 0.5rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--ion-border-color);
+    letter-spacing: -0.005em;
+  }
+
+  .privacy-policy-page h2:first-of-type {
+    margin-top: 1.5rem;
+  }
+
+  .privacy-policy-page h3 {
+    font-size: 0.9375rem;
+    font-weight: 700;
+    margin: 1.25rem 0 0.375rem;
+  }
+
+  .privacy-policy-page ul {
+    padding-left: 1.125rem;
+    margin: 0.5rem 0;
+  }
+
+  .privacy-policy-page li {
+    margin-bottom: 0.4rem;
+  }
+
+  .privacy-policy-page .meta {
+    color: var(--ion-color-medium);
+    font-size: 0.8125rem;
+    margin: 0 0 1.25rem;
+  }
+
+  .privacy-policy-page .lead {
+    font-size: 0.96875rem;
+  }
+
+  .privacy-policy-page .callout {
+    background: var(--ion-item-background);
+    border: 1px solid var(--ion-border-color);
+    border-radius: 0.875rem;
+    padding: 0.875rem 1rem;
+    margin: 1rem 0;
+    font-size: 0.875rem;
+  }
+
+  .privacy-policy-page .callout p {
+    margin: 0.35rem 0;
+  }
+
+  .privacy-policy-page .callout p:first-child {
+    margin-top: 0;
+  }
+
+  .privacy-policy-page .callout p:last-child {
+    margin-bottom: 0;
+  }
+
+  .privacy-policy-page dl {
+    margin: 0.75rem 0;
+  }
+
+  .privacy-policy-page dt {
+    font-weight: 700;
+    margin-top: 0.875rem;
+  }
+
+  .privacy-policy-page dd {
+    margin: 0.125rem 0 0;
+    color: var(--ion-color-medium);
+  }
+
+  .privacy-policy-page code {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: 0.85em;
+    background: var(--ion-item-background);
+    padding: 0.1em 0.35em;
+    border-radius: 4px;
+  }
+
+  .privacy-policy-page footer {
+    margin-top: 2.5rem;
+    padding-top: 1.125rem;
+    border-top: 1px solid var(--ion-border-color);
+    color: var(--ion-color-medium);
+    font-size: 0.8125rem;
+  }
+
+  .scroll-top-fab {
+    position: fixed;
+    right: 1.25rem;
+    bottom: 1.25rem;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 999px;
+    border: none;
+    background: var(--ion-color-primary);
+    color: var(--ion-color-primary-contrast);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(0.5rem);
+    transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
+  }
+
+  .scroll-top-fab.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  .scroll-top-fab:focus-visible,
+  .back-arrow:focus-visible {
+    outline: 2px solid var(--ion-color-primary);
+    outline-offset: 2px;
+  }
+
+  .scroll-top-fab svg {
+    width: 1.375rem;
+    height: 1.375rem;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .scroll-top-fab {
+      transition: none;
+    }
+  }
+</style>
+
+<header class="app-header">
+  <div class="header-row">
+    <span class="header-title">Privacy Policy</span>
+  </div>
+</header>
+
+<div class="privacy-policy-page">
+  <p class="meta">Effective date: July 22, 2026 · Last updated: July 22, 2026</p>
+
+  <p class="lead">Pocket QCode is an Android app that generates QR codes. This policy explains what happens to your information when you use it. The short version: anything you put into the app — including photos, files, a contact, or your location when you choose to turn one into a code — is processed on your device and never reaches me. The advertising service that supports the free version does, however, collect device information.</p>
+
+  <h2>1. Who is responsible</h2>
+  <p>Pocket QCode is developed and published by Ricardo Guevara, an individual developer ("I", "me", "the developer"). I am the party responsible for this app and for this policy.</p>
+  <p>For any question or request about privacy, write to <a href="mailto:just0ricksupport@gmail.com">just0ricksupport@gmail.com</a>.</p>
+
+  <h2>2. Information I collect</h2>
+  <p><strong>None.</strong> I do not operate any server or database for this app, and I never receive your personal information.</p>
+  <ul>
+    <li>There is no account, sign-up, or login.</li>
+    <li>The app does not request camera access and does not scan codes.</li>
+    <li>Everything you create in the app — the text or data you enter, the codes you generate, and any saved history — stays in the app's local storage on your device. It is never uploaded to me.</li>
+  </ul>
+  <p>Because this content lives only on your device, uninstalling the app deletes it. If your device is backed up by Android or Google Drive, a copy may exist in that backup under Google's terms, not mine.</p>
+
+  <h3>Photos and files you choose</h3>
+  <p>The app can build a QR code from an image or a file, and can use an image to style or brand a code. When you use one of these features, Android's own picker opens and you select the specific item you want. The app receives only that item. It cannot browse your gallery or your storage, and it has no standing access to anything you did not select.</p>
+  <p>The file or image you select is processed on your device to produce the code. It is not uploaded, not transmitted, and not shared with me or with any third party.</p>
+
+  <h3>Contact details you choose</h3>
+  <p>The app can turn a contact into a shareable QR code (a vCard). You start this yourself, either by picking a contact through Android's contact picker or by sharing a contact into Pocket QCode from another app. In both cases Android hands the app the details of that one contact — typically a name, phone number, email address, and any other fields stored in the entry.</p>
+  <p>The app does not read your contact list. It cannot see contacts you have not selected, and it does not keep a copy of your address book.</p>
+  <p>The contact details you select are used only to generate the QR code on your device. They are not uploaded, not transmitted, and not shared with me or with any third party. Note that a QR code created this way <em>contains</em> those contact details in readable form, so anyone who scans an image you export or share will be able to read them. Share generated codes only with people you intend to give that information to.</p>
+  <p>If you are creating a code from someone else's contact details, please make sure you have that person's agreement before sharing it.</p>
+
+  <h3>Your location</h3>
+  <p>The app can create a QR code that points to a geographic position, using your device's location.</p>
+  <p>Unlike the features above, this one needs a permission. The first time you use it, Android asks whether to allow Pocket QCode to access your location, and you can allow it, allow it once, or deny it. Nothing happens until you agree. Denying it affects only this feature; the rest of the app works normally.</p>
+  <p>Location is read <strong>only at the moment you ask for it</strong>, by tapping the control that creates a location code. The app does not track you, does not read your position in the background, and does not run while closed. The coordinates are used on your device to build the code and are not uploaded, transmitted, or shared with me or with any third party. If you save the code, the coordinates are stored in the app's local storage on your device along with your other saved codes.</p>
+  <p>You can withdraw this permission at any time in Android: Settings → Apps → Pocket QCode → Permissions → Location. On Android 12 and later you can also grant approximate location instead of precise location, which the app will use.</p>
+  <div class="callout">
+    <p><strong>Before you share a location code:</strong> the code contains your coordinates in readable form. Anyone who scans it can see exactly where you were when you created it. If you made it at home, it discloses your home address. Share these codes deliberately.</p>
+  </div>
+
+  <h2>3. Information collected by advertising</h2>
+  <p>The free version of Pocket QCode shows ads through <strong>Google AdMob</strong>, a service of Google LLC. To serve, measure, and limit the repetition of ads, AdMob and its advertising partners collect information directly from your device. This typically includes:</p>
+  <ul>
+    <li>Your Android advertising ID (a resettable identifier) and similar device or app identifiers</li>
+    <li>Your IP address, and an approximate location inferred from it, such as country or city</li>
+    <li>Device and app information such as device model, operating system version, language, and app version</li>
+    <li>Ad interaction data, such as which ads were shown, viewed, or tapped, and data used to detect invalid traffic and fraud</li>
+  </ul>
+  <p>Google acts as an independent data controller for this information. I do not receive it, and I cannot access, correct, or delete it. It is governed by Google's own policies:</p>
+  <ul>
+    <li><a href="https://policies.google.com/privacy">Google Privacy Policy</a></li>
+    <li><a href="https://policies.google.com/technologies/partner-sites">How Google uses information from sites or apps that use its services</a></li>
+    <li><a href="https://support.google.com/admob/answer/9012903">Google's ad technology providers</a></li>
+  </ul>
+
+  <h3>Your choices about ads</h3>
+  <ul>
+    <li><strong>Reset or delete your advertising ID.</strong> On most Android devices: Settings → Google → Ads. There you can reset the identifier or delete it entirely, which stops personalized advertising.</li>
+    <li><strong>Change your consent.</strong> If you are in a region where a consent prompt is shown, you can review or change your choice at any time from the app's settings screen.</li>
+    <li><strong>Remove ads.</strong> The one-time in-app purchase described below removes advertising from the app. Once ads are removed, the AdMob advertising SDK no longer requests ads or collects data for that purpose.</li>
+  </ul>
+
+  <h2>4. Purchases</h2>
+  <p>Pocket QCode offers a one-time in-app purchase (US$1.99 or the local equivalent) that removes ads and unlocks additional features.</p>
+  <p>All payments are processed by <strong>Google Play Billing</strong>. Your payment method, card number, billing address, and any other payment details are entered into and handled by Google — never by the app and never by me. I do not see, receive, or store payment information.</p>
+  <p>What I can see is limited to the aggregated and pseudonymized sales and order information that the Google Play Console shows any developer, such as the number of purchases, refunds, country of sale, and an order identifier. Purchase and refund records are handled by Google under the <a href="https://payments.google.com/termsofservice">Google Payments Terms of Service</a> and the <a href="https://policies.google.com/privacy">Google Privacy Policy</a>.</p>
+  <p>Your entitlement to the ad-free version is verified through your Google Play account and is restored automatically when you reinstall the app or install it on another device signed in to the same account.</p>
+
+  <h2>5. Permissions the app uses</h2>
+  <dl>
+    <dt>Internet and network state</dt>
+    <dd>Required to load ads and to verify purchases with Google Play.</dd>
+    <dt>Advertising ID (<code>com.google.android.gms.permission.AD_ID</code>)</dt>
+    <dd>Used by the AdMob SDK to serve and measure ads. It is not used in the ad-free version.</dd>
+    <dt>Location (<code>ACCESS_COARSE_LOCATION</code> and/or <code>ACCESS_FINE_LOCATION</code>)</dt>
+    <dd>Requested only when you choose to create a QR code from your current position, and read only at that moment. Foreground only — there is no background location access. You can deny or revoke it without affecting the rest of the app.</dd>
+    <dt>Photos, files, and contacts</dt>
+    <dd>Handled through Android's system pickers and share sheet, which do not require a permission. Access is granted by you, one item at a time, and lasts only as long as it takes to build the code. The app holds no ongoing access to your gallery, storage, or address book.</dd>
+  </dl>
+  <p>The app requests no other sensitive permissions.</p>
+
+  <h2>6. Open-source components</h2>
+  <p>Pocket QCode is built with Angular, Ionic, and Capacitor, and uses open-source libraries including <code>qrcode</code>, <code>qr-code-styling</code>, <code>swiper</code>, <code>rxjs</code>, <code>tslib</code>, and <code>zone.js</code>. These libraries are bundled inside the app and run entirely on your device. They do not transmit your data anywhere and do not collect analytics.</p>
+  <p>To be explicit about what is <em>not</em> present: the app contains no analytics SDK, no crash-reporting SDK, no attribution or tracking SDK, and no push notification service.</p>
+
+  <h2>7. Sharing and international transfers</h2>
+  <p>I do not sell, rent, or share your information, because I do not hold any. The only data flows described in this policy are between your device and Google (for advertising and for billing).</p>
+  <p>Google operates globally and may process the data it collects on servers in the United States and other countries. Where personal data is transferred out of the European Economic Area or the United Kingdom, Google relies on its own transfer mechanisms, including the European Commission's Standard Contractual Clauses. Details are in Google's privacy policy, linked above.</p>
+
+  <h2>8. Data retention</h2>
+  <p>I retain nothing, because I receive nothing. Content you create is retained on your device for as long as you keep it there, and is removed when you delete it or uninstall the app. Data collected by Google for advertising and billing is retained according to Google's own retention schedules, which are described in the Google privacy policy.</p>
+
+  <h2>9. Children</h2>
+  <p>Pocket QCode is a general-purpose utility. It is not directed to children, and children are not its intended audience. I do not knowingly collect personal information from anyone, including children under 13 (or the equivalent minimum age in your country, such as 16 in parts of the European Economic Area).</p>
+  <p>If you are a parent or guardian and believe a child has provided personal information through this app, contact me at <a href="mailto:just0ricksupport@gmail.com">just0ricksupport@gmail.com</a> and I will help to the extent I am able. Because the app has no accounts and no server, any content a child created can be removed simply by clearing the app's data or uninstalling it.</p>
+  <p>Ads shown in the app are configured with a content rating suitable for a general audience.</p>
+
+  <h2>10. Your rights in the European Economic Area and the United Kingdom</h2>
+  <p>If the GDPR or UK GDPR applies to you, the legal bases for the limited processing that occurs are:</p>
+  <ul>
+    <li><strong>Consent</strong> — for storing and reading information on your device for advertising purposes and for personalized advertising. Where required, this consent is collected through Google's consent message before any ad is requested, and you can withdraw it at any time from the app's settings.</li>
+    <li><strong>Consent</strong> — for accessing your device's location, given through Android's permission prompt when you first use the location code feature and revocable at any time in Android settings. Location data is processed on your device only and is not transmitted to me or to anyone else.</li>
+    <li><strong>Legitimate interests</strong> — for serving non-personalized advertising, measuring ad delivery, and preventing fraud and invalid traffic, which is what allows a free app to exist.</li>
+    <li><strong>Performance of a contract</strong> — for processing and validating your in-app purchase.</li>
+  </ul>
+  <p>You have the right to access your personal data, to have it corrected or erased, to restrict or object to its processing, to data portability, to withdraw consent at any time, and to lodge a complaint with your national data protection authority.</p>
+  <p>Because I hold no personal data, I cannot fulfil an access or deletion request myself. Please direct such requests to Google, which is the controller of the data described in sections 3 and 4. I will assist where I can — write to <a href="mailto:just0ricksupport@gmail.com">just0ricksupport@gmail.com</a>.</p>
+
+  <h2>11. Your rights in California and other U.S. states</h2>
+  <p>I do not sell your personal information for money, and I have no access to personal information about you.</p>
+  <p>However, under the California Consumer Privacy Act (as amended by the CPRA) and similar state laws, the use of personalized advertising may be treated as "sharing" personal information for cross-context behavioral advertising. If you prefer to avoid this, you can delete or reset your advertising ID in your Android settings, opt out through Google's <a href="https://adssettings.google.com">Ad Settings</a>, or purchase the ad-free version.</p>
+  <p>Depending on your state, you may have the right to know what personal information is collected, to request its deletion or correction, to opt out of targeted advertising, and not to be discriminated against for exercising these rights. Requests concerning advertising data should be directed to Google. You may contact me at <a href="mailto:just0ricksupport@gmail.com">just0ricksupport@gmail.com</a> and I will respond and forward what I can.</p>
+
+  <h2>12. Security</h2>
+  <p>Since your data stays on your device, its security depends on your device's own protections: your screen lock, your operating system updates, and your Google account security. The app does not transmit your generated content over the internet.</p>
+
+  <h2>13. Changes to this policy</h2>
+  <p>I may update this policy when the app changes or when the law requires it. The revised version will be included in a subsequent app update, with a new "Last updated" date at the top. Material changes will be highlighted in the app before they take effect where that is practical. Continuing to use the app after an update means you accept the revised policy.</p>
+
+  <h2>14. Contact</h2>
+  <div class="callout">
+    <p>Ricardo Guevara</p>
+    <p>Independent developer</p>
+    <p><a href="mailto:just0ricksupport@gmail.com">just0ricksupport@gmail.com</a></p>
+  </div>
+  <p>I aim to reply to privacy requests within 30 days.</p>
+
+  <footer>
+    <p>Pocket QCode — Privacy Policy — Effective July 22, 2026</p>
+  </footer>
+</div>
+
+<script>
+  var SCROLL_TOP_THRESHOLD = 400;
+  var fab = document.getElementById("scrollTopFab");
+
+  window.addEventListener("scroll", function () {
+    if (window.scrollY > SCROLL_TOP_THRESHOLD) {
+      fab.classList.add("visible");
+    } else {
+      fab.classList.remove("visible");
+    }
+  });
+
+  fab.addEventListener("click", function () {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+</script>
+
+</body></html>
